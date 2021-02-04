@@ -2,7 +2,7 @@
 <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 
 <body style="background-color:rgb(12, 12, 12)">
-    <div class="bg-gray-900 shadow-md rounded-xl px-10 py-8 mt-20 mx-auto flex flex-col md:max-w-2xl md:min-2-s">
+    <div class="bg-gray-900 shadow-md rounded-xl px-10 py-8 mt-20 mx-auto ms:mx-5 flex flex-col md:max-w-2xl">
         <div class="mb-4">
             <label class="rounded block text-gray-200 text-lg font-bold ">
                 Login
@@ -14,8 +14,7 @@
 
 
         <div class="mb-4">
-            <label class="rounded block text-blue-700 text-lg font-bold mb-2 focus:outline-none" for="Email"
-                name="email">
+            <label class="rounded block text-blue-700 text-lg font-bold mb-2 focus:outline-none" for="Email" name="email">
                 Email
                 <input
                     class="border rounded-xl w-full py-2 px-3 text-gray-600 focus:outline-none focus:ring focus:border-blue-400"
@@ -25,21 +24,19 @@
 
 
         <div class="mb-4">
-            <label class="rounded block text-blue-700 text-lg font-bold mb-2 focus:outline-none" for="password"
-                name="pswrd">
+            <label class="rounded block text-blue-700 text-lg font-bold mb-2 focus:outline-none" for="password" name = "pswrd">
                 Password
                 <input
                     class="bg-white border rounded-xl w-full py-2 px-3 text-gray-600 mb-3 focus:outline-none focus:ring focus:border-blue-400"
                     id="password" type="password" placeholder="******************" required>
                 <input type="checkbox" checked="checked" name="remember">
-                Remember Me
+                    Remember Me
             </label>
         </div>
 
 
         <div class="flex items-center justify-between">
-            <button class="bg-blue-700 hover:bg-blue-500 text-white font-bold py-2 px-6 rounded focus:outline-none"
-                type="submit">
+            <button class="bg-blue-700 hover:bg-blue-500 text-white font-bold py-2 px-6 rounded focus:outline-none" type="submit">
                 Login
             </button>
             <a class="inline-block align-baseline font-bold text-sm m-auto text-blue-600 hover:text-blue-300" href="#">

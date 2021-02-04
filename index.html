@@ -1,10 +1,6 @@
 <html>
 <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 
-<!--In theory, the background would not be just an off-black sheet but it would be whatever webpage 
-    you were on when you clicked the login button. I imagine it is much more dificult that it sounds,
-    but I would like to have the webpage fade and/or darken and/or blur out as this login page does a 
-    similar effect in reverse-->
 <body style="background-color:rgb(12, 12, 12)">
     <div class="bg-gray-900 shadow-md rounded-xl px-10 py-8 mt-20 mx-auto flex flex-col md:max-w-2xl ">
         <div class="mb-4">
@@ -18,32 +14,38 @@
 
 
         <div class="mb-4">
-            <label class="rounded block text-blue-700 text-lg font-bold mb-2" for="Email">
+            <label class="rounded block text-blue-700 text-lg font-bold mb-2 focus:outline-none" for="Email">
                 Email
-                <input class="inline-block border rounded-xl w-full py-2 px-3 text-gray-600" id="email" type="text"
-                    placeholder="example.email@gmail.com">
+                <input
+                    class="border rounded-xl w-full py-2 px-3 text-gray-600 focus:outline-none focus:ring focus:border-blue-400"
+                    id="email" type="text" placeholder="john.doe@gmail.com">
             </label>
-
         </div>
 
 
         <div class="mb-4">
-            <label class="rounded block text-blue-700 text-lg font-bold mb-2" for="password">
+            <label class="rounded block text-blue-700 text-lg font-bold mb-2 focus:outline-none" for="password">
                 Password
-                <input class="inline-block border rounded-xl w-full py-2 px-3 text-gray-600 mb-3" id="password"
-                    type="password" placeholder="******************">
+                <input
+                    class="border rounded-xl w-full py-2 px-3 text-gray-600 mb-3 focus:outline-none focus:ring focus:border-blue-400"
+                    id="password" type="password" placeholder="******************">
             </label>
-
         </div>
 
 
         <div class="flex items-center justify-between">
-            <button class="bg-blue-700 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded" type="button">
+            <button class="bg-blue-700 hover:bg-blue-500 text-white font-bold py-2 px-6 rounded focus:outline-none"
+                type="button">
                 Login
             </button>
-            <a class="inline-block align-baseline font-bold text-sm text-blue-400 hover:text-blue-300" href="#">
+            <a class="inline-block align-baseline font-bold text-sm m-auto text-blue-400 hover:text-blue-300" href="#">
+                Create New Account
+            </a>
+            <a class="font-bold text-sm text-blue-400 hover:text-blue-300" href="#">
                 Forgot Password?
             </a>
         </div>
+
     </div>
+
 </html>

@@ -1,9 +1,11 @@
 <html>
 <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.3/tailwind.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.8.1/alpine.js" rel="stylesheet">
 
 <script>
     function setColor(id) {
-        document.getElementById(id).style.backgroundColor = "#374151";
+        document.getElementById(id).style.backgroundColor = "#FFFFFF";
     }
 </script>
 
@@ -27,45 +29,18 @@
 
 <body style="background-color:rgb(32, 32, 32)">
 
-    <h1 id="title"
-        class="rounded block text-gray-200 opacity-0 text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-center mt-5 pt-10 text-gray-200">
-        Follow the Rainbow to get the Gold!</h1>
-
-    <div class="grid grid-cols-7 text-center h-4/5 py-5 px-0 md:px-auto">
-        <button id="3"
-            class="shadow rounded-full w-2/3 px-10 py-8 mt-20 mx-0 sm:mx-auto flex-col max-w-2xl focus:outline-none transition duration-200 ease-in-out bg-yellow-400 hover:bg-gray-600 transform hover:-translate-y-1 hover:scale-110"
-            onclick="testFunction(3)">
-        </button>
-
-        <button id="2"
-            class="shadow rounded-full w-2/3 px-10 py-8 mt-20 mx-0 sm:mx-auto flex-col max-w-2xl focus:outline-none transition duration-200 ease-in-out bg-yellow-600 hover:bg-gray-600 transform hover:-translate-y-1 hover:scale-110"
-            onclick="testFunction(2)">
-        </button>
-
-        <button id="4"
-            class="shadow rounded-full w-2/3 px-10 py-8 mt-20 mx-0 sm:mx-auto flex-col max-w-2xl focus:outline-none transition duration-200 ease-in-out bg-green-500 hover:bg-gray-600 transform hover:-translate-y-1 hover:scale-110"
-            onclick="testFunction(4)">
-        </button>
-
-        <button id="6"
-            class="shadow rounded-full w-2/3 px-10 py-8 mt-20 mx-0 sm:mx-auto flex-col max-w-2xl focus:outline-none transition duration-200 ease-in-out bg-indigo-700 hover:bg-gray-600 transform hover:-translate-y-1 hover:scale-110"
-            onclick="testFunction(6)">
-        </button>
-
-        <button id="5"
-            class="shadow rounded-full w-2/3 px-10 py-8 mt-20 mx-0 sm:mx-auto flex-col max-w-2xl focus:outline-none transition duration-200 ease-in-out bg-blue-600 hover:bg-gray-600 transform hover:-translate-y-1 hover:scale-110"
-            onclick="testFunction(5)">
-        </button>
-
-        <button id="1"
-            class="shadow rounded-full w-2/3 px-10 py-8 mt-20 mx-0 sm:mx-auto flex-col max-w-2xl focus:outline-none transition duration-200 ease-in-out bg-red-600 hover:bg-gray-600 transform hover:-translate-y-1 hover:scale-110"
-            onclick="testFunction(1)">
-        </button>
-
-        <button id="7"
-            class="shadow rounded-full w-2/3 px-10 py-8 mt-20 mx-0 sm:mx-auto flex-col max-w-2xl focus:outline-none transition duration-200 ease-in-out bg-purple-900 hover:bg-gray-600 transform hover:-translate-y-1 hover:scale-110"
-            onclick="testFunction(7)">
-        </button>
+    <div x-data="{stuff: [false, false, false]}">
+        <div x-show="!stuff[0]">
+            <input x-model="stuff[0]" type="checkbox">Stuff 1
+        </div>
+        
+        <div x-show="!stuff[1]">
+            <input x-model="stuff[1]" type="checkbox">Stuff 2
+        </div>
+        
+        <div x-show="!stuff[2]">
+            <input x-model="stuff[2]" type="checkbox">Stuff 3
+        </div>
     </div>
 
 </html>

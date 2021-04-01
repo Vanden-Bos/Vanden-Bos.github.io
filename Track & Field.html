@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.3/tailwind.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.8.1/alpine.js" defer> </script>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cross Country</title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-white-400">
+    <div class="bg-blue-500" x-data="{showMenu : false}">
+        <button @click.prevent="showMenu = !showMenu " class="px-2 py-4 flex justify-between bg-blue-500 text-white">
+            <svg x-show="!showMenu" class="w-6 h-6 mr-2" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                <path d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+            <svg x-show="showMenu" class="w-6 h-6 mr-2" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                <path d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+            Menu
+        </button>
+        <div x-show="showMenu">
+            <nav class="flex flex-col">
+                <a href="Cross Country.html"
+                    class="px-2 py-4 text-blue-600 bg-white flex justify-between w-full border-b border-blue-900 hover:text-blue-100 hover:bg-blue-600">
+
+
+                    Cross Country
+                    <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </a>
+                <a ref="Track & Field.html"
+                    class="px-2 py-4 text-white bg-blue-600 flex justify-between w-full border-b border-blue-900 hover:text-blue-100 hover:bg-blue-600">
+                    Track & Field
+                    <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </a>
+            </nav>
+        </div>
+    </div><!-- .bg-blue-500 -->
+    <script src="<https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js>" defer></script>
+
+    <div>
+        <h1 class="flex flex-col p-4 text-2xl text-center font-semibold text-blue-800">
+            Track & Field
+        </h1>
+    </div>
+
+
+
+
+</body>
+
+
+</html>

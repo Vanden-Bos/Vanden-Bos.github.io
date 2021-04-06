@@ -11,53 +11,58 @@
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
-<body class="bg-white-400">
-    <div class="bg-blue-500" x-data="{showMenu : false}">
-        <button @click.prevent="showMenu = !showMenu " class="px-2 py-4 flex justify-between bg-blue-500 text-white">
-            <svg x-show="!showMenu" class="w-6 h-6 mr-2" fill="none" stroke-linecap="round" stroke-linejoin="round"
-                stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-                <path d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-            <svg x-show="showMenu" class="w-6 h-6 mr-2" fill="none" stroke-linecap="round" stroke-linejoin="round"
-                stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-                <path d="M6 18L18 6M6 6l12 12"></path>
-            </svg>
-            Menu
-        </button>
-        <div x-show="showMenu">
-            <nav class="flex flex-col">
-                <a href="index.html"
-                    class="px-2 py-4 text-blue-600 bg-white flex justify-between w-full border-b border-blue-900 hover:text-blue-100 hover:bg-blue-600">
+<body class="bg-gray-800">
+    <div class="flex justify-between content-center">
+        <div x-data="{ open: false }" @keydown.escape.stop="open = false" @click.away="open = false"
+            class="p-8 relative inline-block text-left">
+            <div>
+                <button type="button"
+                    class="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-gray-500"
+                    id="options-menu" @click="open = !open" aria-haspopup="true" x-bind:aria-expanded="open"
+                    aria-expanded="true">
+                    Tools
+                    <svg class="-mr-1 ml-2 h-5 w-5" x-description="Heroicon name: solid/chevron-down"
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd"
+                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+            </div>
 
 
-                    Cross Country
-                    <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        viewBox="0 0 24 24" stroke="currentColor">
-                        <path d="M9 5l7 7-7 7"></path>
-                    </svg>
-                </a>
-                <a ref="Track & Field.html"
-                    class="px-2 py-4 text-white bg-blue-600 flex justify-between w-full border-b border-blue-900 hover:text-blue-100 hover:bg-blue-600">
-                    Track & Field
-                    <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        viewBox="0 0 24 24" stroke="currentColor">
-                        <path d="M9 5l7 7-7 7"></path>
-                    </svg>
-                </a>
-            </nav>
+            <div x-description="Dropdown menu, show/hide based on menu state." x-show="open"
+                x-transition:enter="transition ease-out duration-100"
+                x-transition:enter-start="transform opacity-0 scale-95"
+                x-transition:enter-end="transform opacity-100 scale-100"
+                x-transition:leave="transition ease-in duration-75"
+                x-transition:leave-start="transform opacity-100 scale-100"
+                x-transition:leave-end="transform opacity-0 scale-95"
+                class="origin-top-left absolute left-5 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+                <div class="py-1" role="none">
+                    <a href="index.html" class="block px-4 py-2 text-sm text-gray-700 hover:text-gray-900 hover:bg-gray-500"
+                        role="menuitem">Cross Country</a>
+                    <a href="Track & Field.html" class="block bg-gray-400 px-4 py-2 text-sm text-gray-700"
+                        role="menuitem">Track & Field</a>
+                </div>
+            </div>
+
         </div>
-    </div><!-- .bg-blue-500 -->
-    <script src="<https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js>" defer></script>
 
-    <div>
-        <h1 class="flex flex-col p-4 text-2xl text-center font-semibold text-blue-800">
-            Track & Field
-        </h1>
+        <div>
+            <h1 class="p-8 bg-gray-800 text-4xl font-bold text-green-700">
+                Track & Field
+            </h1>
+        </div>
+
+        <div class="p-8">
+            <button
+                class="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-gray-500">
+                Reset
+            </button>
+        </div>
     </div>
-
-
-
-
 </body>
 
 

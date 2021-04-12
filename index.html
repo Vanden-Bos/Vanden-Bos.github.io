@@ -3,6 +3,7 @@
 <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.3/tailwind.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.8.1/alpine.js" defer> </script>
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 
 <head>
     <meta charset="UTF-8">
@@ -12,7 +13,7 @@
 </head>
 
 <body class="bg-gray-800">
-    <div x-data="{counter: 0}">
+    <div x-data="{counter: -1, overallScore: 1, name1: 'Team 1', name2: 'Team 2', name3: 'Team 3', name4: 'Team 4', name5: 'Team 5', name6: 'Team 6', team1Score: 0, team2Score: 0, team3Score: 0, team4Score: 0, team5Score: 0, team6Score: 0, team1cnt: 0, team2cnt: 0, team3cnt: 0, team4cnt: 0, team5cnt: 0, team6cnt: 0}">
         <div class="flex justify-between content-center">
             <div x-data="{ open: false }" @keydown.escape.stop="open = false" @click.away="open = false"
                 class="p-8 relative inline-block text-left">
@@ -75,23 +76,185 @@
                         d="M206 171.144L42.678 7.822c-9.763-9.763-25.592-9.763-35.355 0-9.763 9.764-9.763 25.592 0 35.355l181 181c4.88 4.882 11.279 7.323 17.677 7.323s12.796-2.441 17.678-7.322l181-181c9.763-9.764 9.763-25.592 0-35.355-9.763-9.763-25.592-9.763-35.355 0L206 171.144z"
                         fill="#648299" fill-rule="nonzero" />
                 </svg>
-                <select
+                <select @change="counter = $event.target.value"
                     class="border border-gray-300 rounded-full text-gray-600 h-10 pl-5 pr-10 bg-white hover:border-gray-400 focus:outline-none appearance-none">
-                    <option>Select the number of teams to track</option>
-                    <option x-on:click="counter = counter + 1">2 teams</option>
-                    <option x-on:click="counter = counter + 1">3 teams</option>
-                    <option x-on:click="counter = counter + 1">4 teams</option>
-                    <option x-on:click="counter = counter + 1">5 teams</option>
-                    <option x-on:click="counter = counter + 1">6 teams</option>
+                    <option x-bind:value="-1">Select the number of teams to track</option>
+                    <option x-bind:value="2">2 teams</option>
+                    <option x-bind:value="3">3 teams</option>
+                    <option x-bind:value="4">4 teams</option>
+                    <option x-bind:value="5">5 teams</option>
+                    <option x-bind:value="6">6 teams</option>
                 </select>
             </div>
         </div>
 
-        <div>
-            Counter: <span x-text="counter"></span>  
+        
+        
+        <div class="justify-center align- px-20">
+            
+            <!-- 1 -->
+            <div  x-show="counter > 0" class="py-10">
+                <div>
+                    <label class="flex justify-center mr-20" for="name1">Team Name:</label>
+                    <div class="flex justify-center mt-1 ml-3 relative rounded-md shadow-sm">
+                        <input id="name1" type="text" x-model="name1">
+                    </div>
+                </div>
+
+
+                <div class="flex justify-center">
+                    <button
+                   
+                        x-on:click="team1Score = team1Score + overallScore; overallScore = overallScore + 1; team1cnt = team1cnt + 1"
+                        class="my-4 fixed bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full h-50 w-100">
+                        <div>
+                            <span x-text="name1"> </span>
+                            :
+                            <span x-text=team1Score></span>
+                            points (
+                            <span x-text=team1cnt></span>
+                            )
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 2 -->
+            <div x-show="counter >= 0" class="py-10">
+                <div>
+                    <label class="flex justify-center mr-20" for="name2">Team Name:</label>
+                    <div class="flex justify-center mt-1 ml-3 relative rounded-md shadow-sm">
+                        <input id="name2" type="text" x-model="name2">
+                    </div>
+                </div>
+
+                <div class="flex justify-center">
+                    <button
+                        x-on:click="team2Score = team2Score + overallScore; overallScore = overallScore + 1; team2cnt = team2cnt + 1"
+                        class="my-4 fixed bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full h-50 w-100">
+                        <div>
+                            <span x-text="name2"> </span>
+                            :
+                            <span x-text=team2Score></span>
+                            points (
+                            <span x-text=team2cnt></span>
+                            )
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 3 -->
+            <div x-show="counter >= 3" class="py-10">
+                <div>
+                    <label class="flex justify-center mr-20" for="name3">Team Name:</label>
+                    <div class="flex justify-center mt-1 ml-3 relative rounded-md shadow-sm">
+                        <input id="name3" type="text" x-model="name3">
+                    </div>
+                </div>
+
+                <div class="flex justify-center">
+                    <button
+                        x-on:click="team3Score = team3Score + overallScore; overallScore = overallScore + 1; team3cnt = team3cnt + 1"
+                        class="my-4 fixed bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full h-50 w-100">
+                        <div>
+                            <span x-text="name3"> </span>
+                            :
+                            <span x-text=team3Score></span>
+                            points (
+                            <span x-text=team3cnt></span>
+                            )
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 4 -->
+            <div x-show="counter >= 4" class="py-10">
+                <div>
+                    <label class="flex justify-center mr-20" for="name4">Team Name:</label>
+                    <div class="flex justify-center mt-1 ml-3 relative rounded-md shadow-sm">
+                        <input id="name4" type="text" x-model="name4">
+                    </div>
+                </div>
+
+                <div class="flex justify-center">
+                    <button
+                        x-on:click="team4Score = team4Score + overallScore; overallScore = overallScore + 1; team4cnt = team4cnt + 1"
+                        class="my-4 fixed bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full h-50 w-100">
+                        <div>
+                            <span x-text="name4"> </span>
+                            :
+                            <span x-text=team4Score></span>
+                            points (
+                            <span x-text=team4cnt></span>
+                            )
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 5 -->
+            <div x-show="counter >= 5" class="py-10">
+                <div>
+                    <label class="flex justify-center mr-20" for="name5">Team Name:</label>
+                    <div class="flex justify-center mt-1 ml-3 relative rounded-md shadow-sm">
+                        <input id="name5" type="text" x-model="name5">
+                    </div>
+                </div>
+
+                <div class="flex justify-center">
+                    <button
+                        x-on:click="team5Score = team5Score + overallScore; overallScore = overallScore + 1; team5cnt = team5cnt + 1"
+                        class="my-4 fixed bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full h-50 w-100">
+                        <div>
+                            <span x-text="name5"> </span>
+                            :
+                            <span x-text=team5Score></span>
+                            points (
+                            <span x-text=team5cnt></span>
+                            )
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 6 -->
+            <div x-show="counter >= 6" class="py-10">
+                <div>
+                    <label class="flex justify-center mr-20" for="name6">Team Name:</label>
+                    <div class="flex justify-center mt-1 ml-3 relative rounded-md shadow-sm">
+                        <input id="name6" type="text" x-model="name6">
+                    </div>
+                </div>
+
+                <div class="flex justify-center">
+                    <button
+                        x-on:click="team6Score = team6Score + overallScore; overallScore = overallScore + 1; team6cnt = team6cnt + 1"
+                        class="my-4 fixed bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full h-50 w-100">
+                        <div>
+                            <span x-text="name6"> </span>
+                            :
+                            <span x-text=team6Score></span>
+                            points (
+                            <span x-text=team6cnt></span>
+                            )
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Other -->
+            <div x-show="counter >= 0" class="py-10">
+                <div class="flex justify-center">
+                    <button
+                        x-on:click="overallScore = overallScore + 1"
+                        class="my-4 fixed bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full h-50 w-100">
+                        Other
+                    </button>
+                </div>
+            </div>
         </div>
-
-
     </div>
 </body>
 

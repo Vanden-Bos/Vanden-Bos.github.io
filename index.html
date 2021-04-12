@@ -13,7 +13,8 @@
 </head>
 
 <body class="bg-gray-800">
-    <div x-data="{counter: -1, overallScore: 1, name1: 'Team 1', name2: 'Team 2', name3: 'Team 3', name4: 'Team 4', name5: 'Team 5', name6: 'Team 6', team1Score: 0, team2Score: 0, team3Score: 0, team4Score: 0, team5Score: 0, team6Score: 0, team1cnt: 0, team2cnt: 0, team3cnt: 0, team4cnt: 0, team5cnt: 0, team6cnt: 0}">
+    <div
+        x-data="{counter: -1, overallScore: 1, name1: 'Team 1', name2: 'Team 2', name3: 'Team 3', name4: 'Team 4', name5: 'Team 5', name6: 'Team 6', team1Score: 0, team2Score: 0, team3Score: 0, team4Score: 0, team5Score: 0, team6Score: 0, team1cnt: 0, team2cnt: 0, team3cnt: 0, team4cnt: 0, team5cnt: 0, team6cnt: 0}">
         <div class="flex justify-between content-center">
             <div x-data="{ open: false }" @keydown.escape.stop="open = false" @click.away="open = false"
                 class="p-8 relative inline-block text-left">
@@ -88,12 +89,12 @@
             </div>
         </div>
 
-        
-        
+
+
         <div class="justify-center align- px-20">
-            
+
             <!-- 1 -->
-            <div  x-show="counter > 0" class="py-10">
+            <div x-show="counter > 0" class="py-10">
                 <div>
                     <label class="flex justify-center mr-20" for="name1">Team Name:</label>
                     <div class="flex justify-center mt-1 ml-3 relative rounded-md shadow-sm">
@@ -104,7 +105,6 @@
 
                 <div class="flex justify-center">
                     <button
-                   
                         x-on:click="team1Score = team1Score + overallScore; overallScore = overallScore + 1; team1cnt = team1cnt + 1"
                         class="my-4 fixed bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full h-50 w-100">
                         <div>
@@ -247,8 +247,7 @@
             <!-- Other -->
             <div x-show="counter >= 0" class="py-10">
                 <div class="flex justify-center">
-                    <button
-                        x-on:click="overallScore = overallScore + 1"
+                    <button x-on:click="overallScore = overallScore + 1"
                         class="my-4 fixed bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full h-50 w-100">
                         Other
                     </button>
